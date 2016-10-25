@@ -173,7 +173,8 @@ sub pingone ($$){
 #     print OUTF $line;
 #     $ssh->waitfor('/word:.*$/');
      $ssh->waitfor('word:');
-     $line=$ssh->exec("$pssword");
+#wait 90 seconds because of neftisa routing bug or so, radius...
+     $line=$ssh->exec("$pssword",90);
 #     print OUTF $line;
 
 #     $ssh->login('Login','Password');
